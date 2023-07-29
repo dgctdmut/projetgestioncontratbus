@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" href=" {% static 'bootstrap-5.2.3-dist/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href=" {% static 'css/pg.css' %}">
+<script src="{% static 'bootstrap-5.2.3-dist/js/bootstrap.min.js'%}"></script>
+{% block content %}
+<html><head>
+   
+  </head>
+  
+  <body>
+
+<div class="content">
+    <h6 style=" color : rgb(109, 105, 105)"><span>Gestion des contrats ></span> Energetics</h6>
+    <div class="white-square">
+      <div class="row ">
+      <div class="col-md-6 mb-5 " id="Id_contrat" class="container-fluid mb-5" style="padding-left: 60px;">
+        <h5  style=" color : gray"> Asper Energetics </h5>
+
+
+      </div>
+      
+      </div>
+      
+      <div class="container">
+ 
+
+        <div class="row ">
+
+          <div class="col-md-6 mb-5 mt-5 " class="form-group">
+            <label for="titre_contrat" class="text-center">Consommation moyenne par km et par type de bus*</label>
+            <input id="ma_bordure" type="text" class="text-center" style="height: 30px; width: 80%;" placeholder="Litres"
+            class="form-control">
+
+          </div>
+          <div class="col-md-6 mb-5 mt-5 " class="form-group">
+            <label for="titre_contrat" class="text-center">Consommation moyenne par km et par type de bus*</label>
+            <input id="ma_bordure" type="text" class="text-center" style="height: 30px; width: 80%;" placeholder="Tonnes"
+            class="form-control">
+
+          </div>
+          <div class="col-md-6 mb-5 " class="form-group">
+            <label for="titre_contrat" class="text-center">Consommation moyenne par km et par type de bus*</label>
+            <input id="ma_bordure" type="text" class="text-center" style="height: 30px; width: 80%;" placeholder="Litres"
+            class="form-control">
+
+          </div>
+          <div class="col-md-6 mb-5 " class="form-group">
+            <label for="titre_contrat" class="text-center">Consommation moyenne par km et par type de bus*</label>
+            <input id="ma_bordure" type="text" class="text-center" style="height: 30px; width: 80%;" placeholder="Tonnes"
+            class="form-control">
+
+          </div>
+
+              
+   
+       
+ 
+        </div>
+        <br><br><br><br><br><br>
+
+        <div class="row">
+    
+            <div class="col-md-2" style="padding-left: 85px;"><button type="button" class="btn btn-primary" id="suivant"><a class="page-link" href="{% url 'Patrimoine' %}">Précédent</a></button></div>
+            <div class="col-md-8">
+      
+            <div class="pagination">
+          
+              <a href="{% url 'contrat' %}"><button class="btn btn-primary" ></button></a>
+              <a href="{% url 'Energy' %}"><button class="btn btn-primary" id="btttn"></button></a>
+              <a href="{% url 'Investissement' %}"><button class="btn btn-primary"></button></a>
+              <a href="{% url 'Patrimoine' %}" ><button class="btn btn-primary" ></button></a>
+              <a href="{% url 'Effectif' %}"><button class="btn btn-primary" ></button></a>
+              <a href="{% url 'Service' %}"><button class="btn btn-primary"></button></a>
+              <a href=""><button class="btn btn-primary"></button></a>
+              <a href=""><button class="btn btn-primary"></button></a>
+            </div>
+            </div> 
+            <div class="col-md-1"><button type="button" class="btn btn-primary" id="suivant"><a class="page-link" href="{% url 'Service' %}">Suivant</a></button></div>
+          </div>
+      
+              </div>
+          </div>
+        
+        
+      </body>
+      </html>
+      
+{% endblock content %}

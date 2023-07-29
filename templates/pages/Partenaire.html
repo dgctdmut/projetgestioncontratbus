@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" href=" {% static 'bootstrap-5.2.3-dist/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href=" {% static 'css/pg.css' %}">
+<script src="{% static 'bootstrap-5.2.3-dist/js/bootstrap.min.js'%}"></script>
+{% block content %}
+
+<html>
+<head>
+
+</head>
+<body>
+    <div class="content">
+        <h6 style=" color : rgb(109, 105, 105)"><span>Gestion des contrats ></span> Ajouter un contrat</h6>
+        <div class="white-square">
+          <div id="Id_contrat" class="container-fluid mb-2" style="padding-left: 30px;">
+            <h5 style=" color : gray">Investissement contractuels</h5>
+          </div>
+          <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+          <div id="Id_contrat"  style="padding-left: 40px;">
+            <h6 style=" color : rgb(0, 0, 0) ; font-size: 16px; font-weight: bold ; ">Autre partenaire</h6>
+          </div>
+            </div>
+   
+    <div class="row">
+         <div class="col-md-12" style="padding-left:70px;  padding-right:60px;">
+        <div class="frame mb-5">
+
+            <div class="row">
+                <div class="col-md-6">
+                <div class="col-md-12 mb-2" >Nom du partenaire*</div>
+                <div class="col-md-12 mb-4" class="form-group">
+                    <div class="input-group mb-2" style="height: 30px; width: 80%;">
+                      <div class="input-group-text" style="height: 35px; width: 10%;">C</div>
+                      <input type="text" style="height: 35px ;" class="form-control" placeholder="Nom">
+                    </div>
+                  </div>  
+                </div>
+                <div  class="col-md-6">
+                <div class="col-md-12 mb-2" >Investissement*</div>
+                <div class="col-md-12 mb-4" class="form-group">
+                    <div class="input-group mb-2" style="height: 30px; width: 80%;">
+                      <div class="input-group-text" style="height: 35px; width: 10%;">C</div>
+                      <input type="text" style="height: 35px ;" class="form-control" placeholder="Montant en DH">
+                    </div>
+                  </div>  
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                <div class="col-md-12 mb-2" >Nombre de bus*</div>
+                <div class="col-md-12 mb-4" class="form-group">
+                    <div class="input-group mb-2" style="height: 30px; width: 80%;">
+                      <div class="input-group-text" style="height: 35px; width: 10%;">C</div>
+                      <input type="text" style="height: 35px ;" class="form-control" >
+                    </div>
+                  </div>  
+                </div>
+                <div  class="col-md-6">
+                <div class="col-md-12 mb-2" >Nombre d'Abris*</div>
+                <div class="col-md-12 mb-4" class="form-group">
+                    <div class="input-group mb-2" style="height: 30px; width: 80%;">
+                      <div class="input-group-text" style="height: 35px; width: 10%;">C</div>
+                      <input type="text" style="height: 35px ;" class="form-control" >
+                    </div>
+                  </div>  
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                <div class="col-md-12 mb-2" >Nombre d'Arrêts*</div>
+                <div class="col-md-12 mb-4" class="form-group">
+                    <div class="input-group mb-2" style="height: 30px; width: 80%;">
+                      <div class="input-group-text" style="height: 35px; width: 10%;">C</div>
+                      <input type="text" style="height: 35px ;" class="form-control" >
+                    </div>
+                  </div>  
+                </div>
+                <div  class="col-md-6">
+                <div class="col-md-12 mb-2" >Nombre d'Aire de stationnement*</div>
+                <div class="col-md-12 mb-4" class="form-group">
+                    <div class="input-group mb-2" style="height: 30px; width: 80%;">
+                      <div class="input-group-text" style="height: 35px; width: 10%;">C</div>
+                      <input type="text" style="height: 35px ;" class="form-control" >
+                    </div>
+                  </div>  
+                </div>
+            </div>
+    </div>
+</div>
+</div>
+</div>
+<div class="container col-md-2" ><button type="button" class="btn btn-primary" id="suivant"><a class="page-link" href="">Valider</a></button></div>
+         
+     
+      
+    <br><br><br>
+    <div class="row">
+    <div class="col-md-10"></div>
+    <div class="col-md-2">
+      <h6 style=" color : rgb(0, 0, 0) ; font-size: 14px; font-weight: bold ; ">Autre partenaire<a href="{% url 'Partenaire' %}">
+      <button class="btn btn-primary" style="width: 25px; height: 25px; border-radius: 50%; position: relative;">
+      <div style="font-size: 25px;top: 40%; position: absolute;  transform: translate(-50%, -50%);">+</div>
+    </button></a></h6>
+  </div>
+</div>
+    <br>
+    <div class="row">
+    
+      <div class="col-md-2" style="padding-left: 85px;"><button type="button" class="btn btn-primary" id="suivant"><a class="page-link" href="">Précédent</a></button></div>
+      <div class="col-md-8">
+
+      <div class="pagination">
+    
+        <a href="{% url 'contrat' %}"><button class="btn btn-primary" ></button></a>
+        <a href=""><button class="btn btn-primary"></button></a>
+        <a href="{% url 'Investissement' %}"><button class="btn btn-primary" id="btttn"></button></a>
+        <a href="{% url 'Patrimoine' %}" ><button class="btn btn-primary" ></button></a>
+        <a href="{% url 'Effectif' %}"><button class="btn btn-primary"></button></a>
+        <a href="{% url 'Service' %}"><button class="btn btn-primary"></button></a>
+        <a href=""><button class="btn btn-primary"></button></a>
+        <a href=""><button class="btn btn-primary"></button></a>
+      </div>
+      </div> 
+      <div class="col-md-1"><button type="button" class="btn btn-primary" id="suivant"><a class="page-link" href="{% url 'Patrimoine' %}">Suivant</a></button></div>
+    </div>
+
+        </div>
+    </div>
+  
+  
+</body>
+</html>
+
+
+
+{% endblock content %}
