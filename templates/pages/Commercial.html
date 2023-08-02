@@ -66,33 +66,34 @@
           <label>Tarif conventions *</label>
           <input id="ma_bordure" type="text" placeholder="DHS"class="form-control">
         </div>
-
+      </div>
         </div>
       </div>
     </div>
   </div>
-
+<br><br>
   
-  <div class="row">
+<div class="row">
     
-        <div class="col-md-2" style="padding-left: 85px;"></div>
-     <div class="col-md-8">
+  <div class="col-md-2" style="padding-left: 85px;"><button type="button" class="btn btn-primary" id="suivant"><a class="page-link" href="{% url 'Service' %}">Précédent</a></button></div>
+  <div class="col-md-8">
 
-            <div class="pagination">
-  
-                <a href="{% url 'contrat' %}" ><button class="btn btn-primary" ></button></a>
-                <a href="{% url 'Energy' %}" ><button class="btn btn-primary"></button></a>
-                <a href="{% url 'Investissement' %}" ><button class="btn btn-primary"></button></a>
-                <a href="{% url 'Patrimoine' %}" ><button class="btn btn-primary"></button></a>
-                <a href="{% url 'Effectif' %}" ><button class="btn btn-primary"></button></a>
-                <a href="{% url 'Service' %}" ><button class="btn btn-primary"></button></a>
-                <a href="{% url 'Commercial' %}" id="btttn"><button class="btn btn-primary"></button></a>
-                <a href="{% url 'Commercial_second' %}"><button class="btn btn-primary"></button></a>
-                <a href="" ><button class="btn btn-primary"></button></a>
-            </div> 
-     </div> 
-        <div class="col-md-1"><button type="button" class="btn btn-primary" id="suivant"><a class="page-link" href="{% url 'Commercial_second' %}">Suivant</a></button></div>
+  <div class="pagination">
+
+    <a href="{% url 'contrat' %}"><button class="btn btn-primary" ></button></a>
+    <a href=""><button class="btn btn-primary"></button></a>
+    <a href="{% url 'Investissement' %}"><button class="btn btn-primary"></button></a>
+    <a href="{% url 'Patrimoine' %}" ><button class="btn btn-primary" ></button></a>
+    <a href="{% url 'Effectif' %}"><button class="btn btn-primary" ></button></a>
+    <a href="{% url 'Service' %}"><button class="btn btn-primary"></button></a>
+    <a href="{% url 'Commercial' %}"><button style="width: 50px;" class="btn btn-primary" id="btttn"></button></a>
+    <a href="{% url 'Commercial_second' %}"><button style="width: 50px;" class="btn btn-primary" ></button></a>
+    <a href=""><button class="btn btn-primary"></button></a>
   </div>
+  </div> 
+  <div class="col-md-1"><button type="button" class="btn btn-primary" id="suivant"><a class="page-link" href="{% url 'Commercial_second' %}">Suivant</a></button></div>
+</div>
+</div>
       
 </div> 
  

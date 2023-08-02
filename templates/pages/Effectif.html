@@ -14,40 +14,42 @@
     <div class="content">
         <h6 style=" color : rgb(109, 105, 105)"><span>Gestion des contrats ></span> Ajouter un contrat</h6>
         <div class="white-square">
-          <div id="Id_contrat" class="container-fluid mb-4" style="padding-left: 30px;">
+          <div id="Id_contrat" class="container-fluid mb-2" style="padding-left: 30px;">
             <h5 style=" color : gray ; font-size:150% ;">Effectif RH</h5>
           </div>
           <br><br>
           <div class="container">
-          <div class="cadre " style="border : 8px double gray; box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);">
+            <div style="padding-left: 200px ;">
+          <div class="cadre" style="border: 2px solid rgb(193, 188, 188) ;padding: 20px; width: 80% ; box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1); ">
           <div class="mb-5" class="form-group" style="padding-left: 90px ; padding-top: 60px;">
             <div class="input-group mb-2" style="height: 40px; width: 80%; ">
-              <div class="input-group-text" style="height: 35px; width: 25%; box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);"><div div class="container" style="color : rgb(0, 0, 0) ; font-size: 16px; font-weight: bold  ;">Conducteurs</div></div>
+              <div class="input-group-text" style="height: 35px; width: 35%; box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);"><div div class="container" style="color : rgb(0, 0, 0) ; font-size: 16px; font-weight: bold  ;">Conducteurs</div></div>
               <input type="text" style="height: 35px; box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);" class="form-control">
             </div>
           </div>
 
           <div class="mb-5" class="form-group" style="padding-left: 90px ;">
             <div class="input-group mb-2" style="height: 40px; width: 80%; ">
-              <div class="input-group-text" style="height: 35px; width: 25%; box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);"><div  class="container" style="color : rgb(0, 0, 0) ; font-size: 16px; font-weight: bold  ;">Contrôleurs</div></div>
+              <div class="input-group-text" style="height: 35px; width: 35%; box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);"><div  class="container" style="color : rgb(0, 0, 0) ; font-size: 16px; font-weight: bold  ;">Contrôleurs</div></div>
               <input type="text" style="height: 35px; box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);" class="form-control">
             </div>
           </div>
 
           <div class="mb-5" class="form-group" style="padding-left: 90px ;">
             <div class="input-group mb-2" style="height: 40px; width: 80%; ">
-              <div class="input-group-text" style="height: 35px; width: 25%; box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);"><div class="container" style="color : rgb(0, 0, 0) ; font-size: 16px; font-weight:bold ;">Mécaniciens</div></div>
+              <div class="input-group-text" style="height: 35px; width: 35%; box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);"><div class="container" style="color : rgb(0, 0, 0) ; font-size: 16px; font-weight:bold ;">Mécaniciens</div></div>
               <input type="text" style="height: 35px; box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);" class="form-control">
             </div>
           </div>
 
           <div class="mb-5" class="form-group" style="padding-left: 90px ;">
             <div class="input-group mb-2" style="height: 40px; width: 80%; ">
-              <div class="input-group-text" style="height: 35px; width: 25%; box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);"><div class="container" style="color : rgb(0, 0, 0) ; font-size: 16px; font-weight: bold  ;">Personnel administratif</div></div>
+              <div class="input-group-text" style="height: 35px; width: 35%; box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);"><div class="container" style="color : rgb(0, 0, 0) ; font-size: 16px; font-weight: bold  ;">Personnel administratif</div></div>
               <input type="text" style="height: 35px; box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);" class="form-control">
             </div>
           </div>
         </div>
+      </div>
       </div>
     
     <br><br><br>
@@ -64,8 +66,8 @@
         <a href="{% url 'Patrimoine' %}" ><button class="btn btn-primary" ></button></a>
         <a href="{% url 'Effectif' %}"><button class="btn btn-primary" id="btttn"></button></a>
         <a href="{% url 'Service' %}"><button class="btn btn-primary"></button></a>
-        <a href=""><button class="btn btn-primary"></button></a>
-        <a href=""><button class="btn btn-primary"></button></a>
+        <a href="{% url 'Commercial' %}"><button class="btn btn-primary"></button></a>
+        <a href="{% url 'Energy' %}"><button class="btn btn-primary"></button></a>
       </div>
       </div> 
       <div class="col-md-1"><button type="button" class="btn btn-primary" id="suivant"><a class="page-link" href="{% url 'Service' %}">Suivant</a></button></div>

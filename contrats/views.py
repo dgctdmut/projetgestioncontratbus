@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+
 def contrat(request):
     return render(request, 'pages\contrat.html')
 
