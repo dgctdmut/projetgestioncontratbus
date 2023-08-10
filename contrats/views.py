@@ -1,7 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render , redirect 
 from .models import Contrat , Perimetre , Energie
 from .forms import ContratForm , PerimetreForm , EnergieForm
-from django.shortcuts import redirect 
 
 def Contratidentif(request):
     if request.method=="POST":
@@ -30,6 +29,9 @@ def Perimetre_step(request , contratid ):
 
 def Patrimoine(request):
     return render(request, 'pages\Patrimoine.html')
+
+def Patrimoine_second(request):
+    return render(request, 'pages\Patrimoine_second.html')
 
 def Effectif(request):
     return render(request, 'pages\Effectif.html')
