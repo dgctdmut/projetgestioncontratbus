@@ -4,96 +4,95 @@
 <link rel="stylesheet" href=" {% static 'css/pg.css' %}">
 <script src="{% static 'bootstrap-5.2.3-dist/js/bootstrap.min.js'%}"></script>
 {% block content %}
-<html><head>
-   
-  </head>
+
+<html>
+<head>
+
+</head>
+<body>
   
-  <body>
-  
+
     <div class="content">
         <h6 style=" color : rgb(109, 105, 105)"><span>Gestion des contrats ></span> Ajouter un contrat</h6>
         <div class="white-square">
+          <form method="POST">
+              {% csrf_token %}
           <div id="Id_contrat" class="container-fluid mb-5" style="padding-left: 60px;">
-            <h5 style=" color : gray">Identification du contrat</h5>
+            <h5 style=" color : gray">Identificateur du contrat</h5>
           </div>
           <div class="container">
             <div class="row">
               <div class="col-md-4 mb-5" class="form-group">
-                <label>Contrat*</label>
-                <input id="ma_bordure" type="text" style="height: 30px; width: 80%;" placeholder="Titre du contrat"
-                  class="form-control">
+                <label for="titreducontrat">Contrat* </label>
+                <input id="titreducontrat" type="text" name="titreducontrat" maxlength="100" style="height: 30px; width: 80%; border : 2px solid rgb(227, 143, 143); " placeholder="Titre du contrat" class="form-control" required>
               </div>
               <div class="col-md-4 mb-5" class="form-group">
-                <label>Semestre*</label>
+                <label for="semestre_debut">Semestre* </label>
                 <div class="input-group mb-2" style="height: 30px; width: 80%;">
                   <div class="input-group-text" style="height: 30px; width: 15%;">De</div>
-                  <input type="text" style="height: 30px;" class="form-control" placeholder="JJ/MM/AAAA">
+                  <input id="semestre_debut" type="text" name="semestre_debut" style="height: 30px;" placeholder="JJ/MM/AAAA" class="form-control" required>
                 </div>
               </div>
               <div class="col-md-4 mb-5" class="form-group">
-                <label style="color : white;">Semestre*</label>
+                <label for="semestre_fin" style="color : white;">Semestre* </label>
                 <div class="input-group mb-2" style="height: 30px; width: 80%;">
                   <div class="input-group-text" style="height: 30px; width: 15%;">A</div>
-                  <input type="text" style="height: 30px;" class="form-control" placeholder="JJ/MM/AAAA">
+                  <input id="semestre_fin" type="text" name="semestre_fin" style="height: 30px;" placeholder="JJ/MM/AAAA" class="form-control" required>
                 </div>
               </div>
     
               <div class="col-md-4 mb-5" class="form-group">
-                <label>Déléguant*</label>
-                <input id="ma_bordure" type="text" style="height: 30px; width: 80%;" placeholder="Nom" class="form-control">
+                <label for="déléguant">Déléguant* </label>
+                <input id="déléguant" type="text" name="déléguant" maxlength="100" style="height: 30px; width: 80%; border : 2px solid rgb(227, 143, 143); " placeholder="Nom" class="form-control" required>
               </div>
               <div class="col-md-4 mb-5" class="form-group">
-                <label>Date visa*</label>
-                <input id="ma_bordure" type="text" style="height: 30px; width: 80%;" placeholder="JJ/MM/AAAA"
-                  class="form-control">
+                <label for="datevisa">Date visa* </label>
+                <input id="datevisa" type="text" name="datevisa" style="height: 30px; width: 80%; border : 2px solid rgb(227, 143, 143); " placeholder="JJ/MM/AAAA" class="form-control" required>
               </div>
               <div class="col-md-4 mb-5" class="form-group">
-                <label>Date de démarrage*</label>
-                <input id="ma_bordure" type="text" style="height: 30px; width: 80%;" placeholder="JJ/MM/AAAA"
-                  class="form-control">
+                <label for="datededémarrage">Date de démarrage* </label>
+                <input id="datededémarrage" type="text" name="datededémarrage" style="height: 30px; width: 80%; border : 2px solid rgb(227, 143, 143); " placeholder="JJ/MM/AAAA" class="form-control" required>
               </div>
     
     
-              <div class="col-md-4 mb-5" class="form-group">
-                <label>Délégataire*</label>
-                <input id="ma_bordure" type="text" style="height: 30px; width: 80%;" placeholder="Nom" class="form-control">
+              <div class="col-md-4 mb-2" class="form-group">
+                <label for="délégataire">Délégataire* </label>
+                <input id="délégataire" type="text" name="délégataire" maxlength="100" style="height: 30px; width: 80%; border : 2px solid rgb(227, 143, 143); " placeholder="Nom" class="form-control" required>
               </div>
-              <div class="col-md-4 mb-4" class="form-group">
-                <label>Durée*</label>
-                <input id="ma_bordure" type="text" style="height: 30px; width: 80%;" placeholder="Durée du contrat"
-                  class="form-control">
+              <div class="col-md-4 mb-2" class="form-group">
+                <label for="durée">Durée* </label>
+                <input id="durée" type="text" name="durée" style="height: 30px; width: 80%; border : 2px solid rgb(227, 143, 143); " placeholder="Durée du contrat" class="form-control" required>
               </div>
             </div>
-            <br><br><br><br><br><br><br><br><br>
-            <div class="row">
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <div class="row">
     
-              <div class="col-md-2" style="padding-left: 85px;"></div>
-              <div class="col-md-8">
-        
-              <div class="pagination">
-            
-        <a href="{% url 'contrat' %}" ><button class="btn btn-primary" id="btttn"></button></a>
-        <a href="" ><button class="btn btn-primary"></button></a>
-        <a href="{% url 'Investissement' %}" ><button class="btn btn-primary"></button></a>
-        <a href="{% url 'Patrimoine' %}" ><button class="btn btn-primary"></button></a>
-        <a href="{% url 'Effectif' %}" ><button class="btn btn-primary"></button></a>
-        <a href="{% url 'Service' %}" ><button class="btn btn-primary"></button></a>
-        <a href="{% url 'Commercial' %}" ><button class="btn btn-primary"></button></a>
-        <a href="{% url 'Energy' %}" ><button class="btn btn-primary"></button></a>
-              </div>
-              </div> 
-              <div class="col-md-1"><button type="button" class="btn btn-primary" id="suivant"><a class="page-link" href="">Suivant</a></button></div>
-            </div>
-                      
-                          
-                      
-                
-            </div> 
-          </div>
-        </div>
-      </div>
-    
-  
-  </body></html>
+      <div class="col-md-2" style="padding-left: 85px;"></button></div>
+      <div class="col-md-8">
 
-  {% endblock content %}
+      <div class="pagination">
+    
+        <a href="{% url 'contrat' %}"><button class="btn btn-primary" id="btttn"></button></a>
+      
+        <a href="{% url 'Investissement' %}"><button class="btn btn-primary"></button></a>
+        <a href="{% url 'Patrimoine' %}" ><button class="btn btn-primary" ></button></a>
+        <a href="{% url 'Effectif' %}"><button class="btn btn-primary"></button></a>
+        <a href="{% url 'Service' %}"><button class="btn btn-primary"></button></a>
+        <a href="{% url 'Commercial' %}"><button class="btn btn-primary"></button></a>
+        <a href="{% url 'Energy' %}"><button class="btn btn-primary"></button></a>
+      </div>
+      </div> 
+      <div class="col-md-1"><button type="submit" class="btn btn-primary" id="suivant">Suivant</button></div>
+    </div>
+
+        </div>
+        </form>
+    </div>
+  
+  
+</body>
+</html>
+
+
+
+{% endblock content %}

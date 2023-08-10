@@ -7,8 +7,8 @@ def Contratidentif(request):
     if request.method=="POST":
         form = ContratForm(request.POST)
         if form.is_valid():
-            contrat = form.save()
-            return redirect ('Perimetre' , contratid = contrat.contrat_id ) 
+           contrat = form.save()
+           return redirect ('Perimetre' , contratid = contrat.contrat_id ) 
     else:
         form = ContratForm() 
     return render(request, 'pages\Contrat.html'   , {'form': form})
