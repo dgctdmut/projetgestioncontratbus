@@ -28,4 +28,3 @@ class Energie(models.Model):
     consommation_electricite = models.DecimalField(max_digits=5 , decimal_places=2)
     emission_carbone = models.DecimalField(max_digits=5 , decimal_places=2)
     
-
