@@ -19,14 +19,14 @@ def Perimetre_step(request , contratid ):
         form = PerimetreForm(request.POST)
         if form.is_valid():
             perimetre = form.save(commit=False)
-            print("yes")
+
             perimetre.contrat_id = contrat
             perimetre.save()
             return redirect ('Investissement', contratid = contrat.contrat_id )
     else:
         form = PerimetreForm()
-        print("non")
-    return render(request, 'pages/Perimetre.html' , {'form': form})
+       
+    return render(request, 'pages\Perimetre.html' , {'form': form})
 
 def Patrimoine(request):
     return render(request, 'pages\Patrimoine.html')

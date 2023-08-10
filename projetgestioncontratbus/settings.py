@@ -81,10 +81,10 @@ DATABASES = {
         'NAME': 'test_dj',
         'USER': 'postgres',
         'PASSWORD': '12369',
-        'HOST': 'localhost',  # If PostgreSQL is running locally
-        'PORT': '5432',      # Default PostgreSQL port
-
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
+
 }
 
 

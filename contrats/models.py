@@ -2,7 +2,6 @@ from django.db import models
 
 # Create your models here.
 class Contrat(models.Model):
-
     contrat_id = models.AutoField(primary_key=True)
     titreducontrat = models.CharField(max_length=100)
     déléguant = models.CharField(max_length=100)
