@@ -11,5 +11,6 @@ urlpatterns = [
     path('Energy',views.Energy,name='Energy'),
     path('Commercial',views.Commercial,name='Commercial'),
     path('Commercial_second',views.Commercial_second,name='Commercial_second'),
+    path('Contratslist',views.Contratslist,name='contrat_list'),
 
 ]

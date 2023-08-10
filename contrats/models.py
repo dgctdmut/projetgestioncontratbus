@@ -1,13 +1,11 @@
 from django.db import models
 
 # Create your models here.
-class contrat(models.Model):
-    Contrat = models.CharField(max_length=100)
-    Déléguant = models.CharField(max_length=100)
-    Délégataire = models.CharField(max_length=100)
-    SemestreDe = models.DateField()
-    Semestreà = models.DateField()
-    Datevisa = models.DateField()
-    Durée = models.IntegerField()
-    Datededémarrage = models.DateField()
-
+class Contrat(models.Model):
+    ContractID = models.AutoField(primary_key=True)
+    ContractTitre = models.CharField(max_length=255)
+    Delegant = models.CharField(max_length=255)
+    Delegataire= models.CharField(max_length=255)
+    Datevisa= models.DateField()
+    DateDebut = models.DateField()
+    DateFin = models.DateField()

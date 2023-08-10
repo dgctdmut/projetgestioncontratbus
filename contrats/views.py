@@ -28,3 +28,9 @@ def Commercial(request):
 def Commercial_second(request):
     return render(request, 'pages\Commercial_second.html')
 
+def Commercial_second(request):
+    return render(request, 'pages\Commercial_second.html')
+
+def Contratslist(request):
+    return render(request, 'pages\Contratslist.html')
+
