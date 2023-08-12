@@ -1,6 +1,6 @@
 from django.shortcuts import render , redirect 
 from .models import Contrat , Perimetre , Energie
-from .forms import ContratForm , PerimetreForm , EnergieForm
+from .forms import ContratForm , PerimetreForm , EnergieForm , CommercialeForm , CommercialsecondeForm
 
 def Contratidentif(request):
     if request.method=="POST":
@@ -18,10 +18,9 @@ def Perimetre_step(request , contratid ):
         form = PerimetreForm(request.POST)
         if form.is_valid():
             perimetre = form.save(commit=False)
-
             perimetre.contrat_id = contrat
             perimetre.save()
-            return redirect ('Investissement', contratid = contrat.contrat_id )
+            return redirect ('Investissement' )
     else:
         form = PerimetreForm()
        
@@ -46,6 +45,7 @@ def Partenaire(request):
     return render(request, 'pages\Partenaire.html')
 
 def Energy(request):
+    contrat = Contrat.objects.get(contrat_id = contratid)
     if request.method=="POST":
         form = EnergieForm(request.POST)
         if form.is_valid():
@@ -56,13 +56,27 @@ def Energy(request):
     return render(request, 'pages\Efficacite_energitique.html' , {'form': form})
 
 def Commercial(request):
-    return render(request, 'pages\Commercial.html')
+    if request.method=="POST":
+        form = CommercialeForm(request.POST)
+        if form.is_valid():
+            commercial = form.save(commit=False)
+            commercial.contrat_id = contrat
+            commercial.save()
+            return redirect ('Commercial_second') 
+    else:
+        form = CommercialeForm()
+    return render(request, 'pages\Commercial.html' , {'form': form})
 
 def Commercial_second(request):
-    return render(request, 'pages\Commercial_second.html')
+    if request.method=="POST":
+        form = CommercialsecondeForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect ('Energy') 
+    else:
+        form = CommercialsecondeForm()
+    return render(request, 'pages\Commercial_second.html', {'form': form})
 
-def Commercial_second(request):
-    return render(request, 'pages\Commercial_second.html')
 
 def Contratslist(request):
     return render(request, 'pages\Contratslist.html')

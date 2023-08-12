@@ -4,79 +4,102 @@
 <link rel="stylesheet" href=" {% static 'css/pg.css' %}">
 <script src="{% static 'bootstrap-5.2.3-dist/js/bootstrap.min.js'%}"></script>
 {% block content %}
-<html><head>
-   
-  </head>
-  
-  <body>
-  
-            
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+
     <div class="content">
         <h6 style=" color : rgb(109, 105, 105)"><span>Gestion des contrats ></span> Ajouter un contrat</h6>
         <div class="white-square">
-          <form method="POST" >
-               {% csrf_token %}
-          <div id="Id_contrat" class="container-fluid mb-5" style="padding-left: 60px;">
-            <h5 style=" color : gray">Identification du périmètre</h5>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-md-4 mb-5" class="form-group">
-                <label for="communesdesservies">Communes desservies* </label>
-                <input id="communesdesservies" type="text" name="communesdesservies" style="height: 30px; width: 80%; border : 2px solid rgb(227, 143, 143); " placeholder="Nombre de communes" class="form-control" required>
-              </div>
+            <form method="POST">
+                {% csrf_token %}
+                <div id="Id_contrat" class="container-fluid mb-5" style="padding-left: 60px;">
+                    <h5 style=" color : gray">Identification du périmètre</h5>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 mb-5" class="form-group">
+                            <label for="communesdesservies">Communes desservies* </label>
+                            <input id="communesdesservies" type="text" name="communesdesservies"
+                                style="height: 30px; width: 80%; border : 2px solid rgb(227, 143, 143); "
+                                placeholder="Nombre de communes" class="form-control" required>
+                        </div>
 
-              <div class="col-md-4 mb-5" class="form-group">
-                <label for="populationdesservie">Population desservie* </label>
-                <input id="populationdesservie" type="text" name="populationdesservie" style="height: 30px; width: 80%; border : 2px solid rgb(227, 143, 143); " placeholder="Nombre de population" class="form-control" required>
-              </div>
-              <div class="col-md-4 mb-5" class="form-group">
-                <label for="longueur_réseau">Longueur du réseau* </label>
-                <input id="longueur_réseau" type="text" name="longueur_réseau" style="height: 30px; width: 80%; border : 2px solid rgb(227, 143, 143); " placeholder="Longueur par Km" class="form-control" required>
-              </div>
-              <div class="col-md-4 mb-5" class="form-group">
-                <label for="nombre_lignes">Nombre de lignes* </label>
-                <input id="nombre_lignes" type="text" name="nombre_lignes" style="height: 30px; width: 80%; border : 2px solid rgb(227, 143, 143); " placeholder="Nombre" class="form-control" required>
-              </div>
-    
-    
-              <div class="col-md-4 mb-2" class="form-group">
-             <label for="lignesurbaines">Lignes urbaine* </label>
-l                <input id="lignesurbaines" type="text" name="lignesurbaines" style="height: 30px; width: 80%; border : 2px solid rgb(227, 143, 143); " placeholder="Lignes par Km" class="form-control" required>
-              </div>
-              <div class="col-md-4 mb-2" class="form-group">
-                <label for="lignespériphériques">Lignes périphériques* </label>
-                <input id="lignespériphériques" type="text" name="lignespériphériques" style="height: 30px; width: 80%; border : 2px solid rgb(227, 143, 143); " placeholder="Lignes par Km" class="form-control" required>
-              </div>
-            </div>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <div class="row">
-    
-              <div class="col-md-2" style="padding-left: 85px;"><button type="button" class="btn btn-primary" id="suivant"><a class="page-link" href="{% url 'contrat' %}">Précédent</a></button></div>
-              <div class="col-md-8">
-        
-              <div class="pagination">
-            
-                <a href="{% url 'contrat' %}"><button class="btn btn-primary" ></button></a>
-                <a href="{% url 'Investissement' %}"><button class="btn btn-primary"></button></a>
-                <a href="{% url 'Patrimoine' %}" ><button class="btn btn-primary"></button></a>
-                <a href="{% url 'Effectif' %}"><button class="btn btn-primary"></button></a>
-                <a href="{% url 'Service' %}"><button class="btn btn-primary" ></button></a>
-                <a href="{% url 'Commercial' %}"><button class="btn btn-primary"></button></a>
-                <a href="{% url 'Energy' %}"><button class="btn btn-primary"></button></a>
-              </div>
-              </div> 
-              <div class="col-md-1"><button type="submit" class="btn btn-primary" id="suivant">Suivant</button></div>
-            </div>
-                      
-                          
-                  
-        
+                        <div class="col-md-4 mb-5" class="form-group">
+                            <label for="populationdesservie">Population desservie* </label>
+                            <input id="populationdesservie" type="text" name="populationdesservie"
+                                style="height: 30px; width: 80%; border : 2px solid rgb(227, 143, 143); "
+                                placeholder="Nombre de population" class="form-control" required>
+                        </div>
+                        <div class="col-md-4 mb-5" class="form-group">
+                            <label for="longueur_réseau">Longueur du réseau* </label>
+                            <input id="longueur_réseau" type="text" name="longueur_réseau"
+                                style="height: 30px; width: 80%; border : 2px solid rgb(227, 143, 143); "
+                                placeholder="Longueur par Km" class="form-control" required>
+                        </div>
+                        <div class="col-md-4 mb-5" class="form-group">
+                            <label for="nombre_lignes">Nombre de lignes* </label>
+                            <input id="nombre_lignes" type="text" name="nombre_lignes"
+                                style="height: 30px; width: 80%; border : 2px solid rgb(227, 143, 143); "
+                                placeholder="Nombre" class="form-control" required>
+                        </div>
+
+
+                        <div class="col-md-4 mb-2" class="form-group">
+                            <label for="lignesurbaines">Lignes urbaine* </label>
+                            <input id="lignesurbaines" type="text" name="lignesurbaines"
+                                style="height: 30px; width: 80%; border : 2px solid rgb(227, 143, 143); "
+                                placeholder="Lignes par Km" class="form-control" required>
+                        </div>
+                        <div class="col-md-4 mb-2" class="form-group">
+                            <label for="lignespériphériques">Lignes périphériques* </label>
+                            <input id="lignespériphériques" type="text" name="lignespériphériques"
+                                style="height: 30px; width: 80%; border : 2px solid rgb(227, 143, 143); "
+                                placeholder="Lignes par Km" class="form-control" required>
+                        </div>
+                    </div>
+                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                    <div class="row">
+
+                        <div class="col-md-2" style="padding-left: 85px;"><button type="button" class="btn btn-primary"
+                                id="suivant"><a class="page-link" href="{% url 'contrat' %}">Précédent</a></button>
+                        </div>
+                        <div class="col-md-8">
+
+                            <div class="pagination">
+
+                                <a href="{% url 'contrat' %}"><button class="btn btn-primary"></button></a>
+                                <a href="{% url 'Investissement' %}"><button class="btn btn-primary"></button></a>
+                                <a href="{% url 'Patrimoine' %}"><button class="btn btn-primary"></button></a>
+                                <a href="{% url 'Effectif' %}"><button class="btn btn-primary"></button></a>
+                                <a href="{% url 'Service' %}"><button class="btn btn-primary"></button></a>
+                                <a href="{% url 'Commercial' %}"><button class="btn btn-primary"></button></a>
+                                <a href="{% url 'Energy' %}"><button class="btn btn-primary"></button></a>
+                            </div>
+                        </div>
+                        <div class="col-md-1"><button type="submit" class="btn btn-primary"
+                                id="suivant">Suivant</button></div>
+                    </div>
+                
+                </div>    
+                
+
+
+
+
+
+            </form>
         </div>
-        </form>
-      </div>
-    
-  
-  </body></html>
+    </div>
+
+
+</body>
+
+</html>
 
   {% endblock content %}

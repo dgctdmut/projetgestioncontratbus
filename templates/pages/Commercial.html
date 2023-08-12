@@ -1,104 +1,110 @@
 {% extends 'base.html' %}
 {% load static %}
-<link rel="stylesheet" href=" {% static 'bootstrap-5.2.3-dist/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'bootstrap-5.2.3-dist/css/bootstrap.min.css' %}">
 <title style="zoom: 0.8;">Direction de la Mobilité Urbaine et Transport</title>
-<link rel="stylesheet" href=" {% static 'css/pg.css' %}">
+<link rel="stylesheet" href="{% static 'css/pg.css' %}">
 <script src="{% static 'bootstrap-5.2.3-dist/js/bootstrap.min.js'%}"></script>
 {% block content %}
 
-
 <div class="content">
-    <h6 style=" color : rgb(109, 105, 105)"><span>Gestion des contrats></span> Ajouter un contrat</h6>
+    <h6 style="color: rgb(109, 105, 105)">
+        <span>Gestion des contrats</span> Ajouter un contrat
+    </h6>
     <div class="white-square">
-      <div id="Id_contrat" class="container-fluid mb-5" style="padding-left: 60px;">
-        <h5 style=" color : gray">Aspect commercial </h5>
-      </div>
-      <div class="container">
-
-  <div class="row mb-3">
-    <div class="col-sm-6 mb-3 mb-sm-0">
-      <div class="card ">
-        <div class="card-body">
-          <h5 class="card-title text-center mb-4">Voyageurs</h5>
-          <div class="mb-3" class="form-group">
-            <label>Nombre moyen de voyageurs/jour*</label>
-            <input id="ma_bordure" type="text" placeholder="Sur un semestre "class="form-control">
-          </div>
-          <div class="mb-3" class="form-group">
-            <label>Nombre moyen place vide /jour *</label>
-            <input id="ma_bordure" type="text" placeholder="Sur un semestre"class="form-control">
-          </div>
-          <div class="mb-3" class="form-group">
-            <label>Total annuel des voyageurs *</label>
-            <input id="ma_bordure" type="text" placeholder="Sur un semestre"class="form-control">
-          </div>
-          <div class="mb-3" class="form-group">
-            <label>Taux moyen de remplissage *</label>
-            <input id="ma_bordure" type="text" placeholder="%"class="form-control">
-          </div>
-          <div class="mb-3" class="form-group">
-            <label>Taux de transport à vide *</label>
-            <input id="ma_bordure" type="text"placeholder="%"class="form-control">
-          </div>
+      <form method="POST">
+        {% csrf_token %}
+        <div id="id_contrat" class="container-fluid mb-5" style="padding-left: 60px;">
+            <h5 style="color: gray">Aspect commercial </h5>
         </div>
-
-
-
-      </div>
+        <div class="container">
+            <div class="row mb-3">
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                    <div class="card ">
+                        <div class="card-body">
+                            <h5 class="card-title text-center mb-4">Voyageurs</h5>
+                            <div class="mb-3 form-group">
+                                <label for="nbvoyageurs">Nombre moyen de voyageurs/jour*</label>
+                                <input id="nbvoyageurs" type="text" name="nbvoyageurs" style="border: 2px solid rgb(227, 143, 143);" placeholder="Sur un semestre" class="form-control" required>
+                            </div>
+                            <div class="mb-3 form-group">
+                                <label for="nbplacesvides">Nombre moyen place vide /jour *</label>
+                                <input id="nbplacesvides" type="text" name="nbplacesvides" style="border: 2px solid rgb(227, 143, 143);" placeholder="Sur un semestre" class="form-control" required>
+                            </div>
+                            <div class="mb-3 form-group">
+                                <label for="totalvoyageursannuels">Total annuel des voyageurs *</label>
+                                <input id="totalvoyageursannuels" type="text" name="totalvoyageursannuels" style="border: 2px solid rgb(227, 143, 143);" placeholder="Sur un semestre" class="form-control" required>
+                            </div>
+                            <div class="mb-3 form-group">
+                                <label for="tauxremplissage">Taux moyen de remplissage *</label>
+                                <input id="tauxremplissage" type="text" name="tauxremplissage" style="border: 2px solid rgb(227, 143, 143);" placeholder="%" class="form-control" required>
+                            </div>
+                            <div class="mb-3 form-group">
+                                <label for="tauxtransportvide">Taux de transport à vide *</label>
+                                <input id="tauxtransportvide" type="text" name="tauxtransportvide" style="border: 2px solid rgb(227, 143, 143);" placeholder="%" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title text-center mb-4">Tarifs</h5>
+                            <div class="mb-3 form-group">
+                                <label for="ticketsvendussemestre">Tickets vendus/semestre *</label>
+                                <input id="ticketsvendussemestre" type="text" name="ticketsvendussemestre" style="border: 2px solid rgb(227, 143, 143);" class="form-control" required>
+                            </div>
+                            <div class="mb-3 form-group">
+                                <label for="tarifscolaire">Tarif scolaire *</label>
+                                <input id="tarifscolaire" type="text" name="tarifscolaire" style="border: 2px solid rgb(227, 143, 143);" placeholder="DHS" class="form-control" required>
+                            </div>
+                            <div class="mb-3 form-group">
+                                <label for="tarifnormal">Tarif normal *</label>
+                                <input id="tarifnormal" type="text" name="tarifnormal" style="border: 2px solid rgb(227, 143, 143);" placeholder="DHS" class="form-control" required>
+                            </div>
+                            <div class="mb-3 form-group">
+                                <label for="tarifconventions">Tarif conventions *</label>
+                                <input id="tarifconventions" type="text" name="tarifconventions" style="border: 2px solid rgb(227, 143, 143);" placeholder="DHS" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <div class="row">
+                <div class="col-md-2" style="padding-left: 85px;">
+                    <button type="button" class="btn btn-primary" id="suivant">
+                        <a class="page-link" href="{% url 'Service' %}">Précédent</a>
+                    </button>
+                </div>
+                <div class="col-md-8">
+                    <div class="pagination">
+                        <a href="{% url 'contrat' %}"><button class="btn btn-primary"></button></a>
+                        <a href=""><button class="btn btn-primary"></button></a>
+                        <a href="{% url 'Investissement' %}"><button class="btn btn-primary"></button></a>
+                        <a href="{% url 'Patrimoine' %}"><button class="btn btn-primary"></button></a>
+                        <a href="{% url 'Effectif' %}"><button class="btn btn-primary"></button></a>
+                        <a href="{% url 'Service' %}"><button class="btn btn-primary"></button></a>
+                        <a href="{% url 'Commercial' %}">
+                            <button style="width: 50px;" class="btn btn-primary" id="btttn"></button>
+                        </a>
+                        <a href="{% url 'Commercial_second' %}">
+                            <button style="width: 50px;" class="btn btn-primary"></button>
+                        </a>
+                        <a href=""><button class="btn btn-primary"></button></a>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <button type="submit" class="btn btn-primary" id="suivant">
+                        Suivant
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title text-center mb-4">Tarifs</h5>
-          <div class="mb-3" class="form-group">
-            <label>Tickets vendus/semestre *</label>
-            <input id="ma_bordure" type="text"class="form-control">
-          </div>
-        <div class="mb-3" class="form-group">
-          <label>Tarif scolaire *</label>
-          <input id="ma_bordure" type="text" placeholder="DHS"class="form-control">
-        </div>
-        <div class="mb-3" class="form-group">
-          <label>Tarif normal *</label>
-          <input id="ma_bordure" type="text" placeholder="DHS"class="form-control">
-        </div>      
-        <div class="mb-3" class="form-group">
-          <label>Tarif conventions *</label>
-          <input id="ma_bordure" type="text" placeholder="DHS"class="form-control">
-        </div>
-      </div>
-        </div>
-      </div>
-    </div>
-  </div>
-<br><br>
-  
-<div class="row">
-    
-  <div class="col-md-2" style="padding-left: 85px;"><button type="button" class="btn btn-primary" id="suivant"><a class="page-link" href="{% url 'Service' %}">Précédent</a></button></div>
-  <div class="col-md-8">
-
-  <div class="pagination">
-
-    <a href="{% url 'contrat' %}"><button class="btn btn-primary" ></button></a>
-    <a href=""><button class="btn btn-primary"></button></a>
-    <a href="{% url 'Investissement' %}"><button class="btn btn-primary"></button></a>
-    <a href="{% url 'Patrimoine' %}" ><button class="btn btn-primary" ></button></a>
-    <a href="{% url 'Effectif' %}"><button class="btn btn-primary" ></button></a>
-    <a href="{% url 'Service' %}"><button class="btn btn-primary"></button></a>
-    <a href="{% url 'Commercial' %}"><button style="width: 50px;" class="btn btn-primary" id="btttn"></button></a>
-    <a href="{% url 'Commercial_second' %}"><button style="width: 50px;" class="btn btn-primary" ></button></a>
-    <a href=""><button class="btn btn-primary"></button></a>
-  </div>
-  </div> 
-  <div class="col-md-1"><button type="button" class="btn btn-primary" id="suivant"><a class="page-link" href="{% url 'Commercial_second' %}">Suivant</a></button></div>
+  </form>
 </div>
 </div>
-      
-</div> 
- 
-</div>
-  
-  </body></html>
+</body>
 
-  {% endblock content %}
+</html>
+{% endblock content %}
