@@ -1,6 +1,6 @@
 from django.shortcuts import render , redirect 
-from .models import Contrat , Perimetre , Energie
-from .forms import ContratForm , PerimetreForm , EnergieForm , CommercialeForm , CommercialsecondeForm
+from .models import Contrat , Perimetre , Energie , Partenaire , Investissement
+from .forms import ContratForm , PerimetreForm , EnergieForm , CommercialeForm , CommercialsecondeForm , InvestissementForm , PartenaireForm
 
 def Contratidentif(request):
     if request.method=="POST":
@@ -20,7 +20,7 @@ def Perimetre_step(request , contratid ):
             perimetre = form.save(commit=False)
             perimetre.contrat_id = contrat
             perimetre.save()
-            return redirect ('Investissement' )
+            return redirect ('Investissement' , contratid = contrat.contrat_id )
     else:
         form = PerimetreForm()
        
@@ -38,11 +38,28 @@ def Effectif(request):
 def Service(request):
     return render(request, 'pages\Service.html')
 
-def Investissement(request):
-    return render(request, 'pages\Investissement.html')
+def Investissement_contractuels(request, contratid ):
+    contrat = Contrat.objects.get(contrat_id = contratid)
+    if request.method=="POST":
+        form = InvestissementForm(request.POST)
+        if form.is_valid():
+            investissement = form.save(commit=False)
+            investissement.contrat_id = contrat
+            investissement.save()
+            return redirect ('Commercial' , contratid = contrat.contrat_id )
+    else:
+        form = InvestissementForm()
+    return render(request, 'pages\Investissement.html', {'form': form})
 
-def Partenaire(request):
-    return render(request, 'pages\Partenaire.html')
+def Autre_Partenaire(request):
+    if request.method=="POST":
+        form = PartenaireForm(request.POST)
+        if form.is_valid():
+           partenaire = form.save()
+           return redirect ('Perimetre' , partenaireid = partenaire.partenaire_id ) 
+    else:
+        form = PartenaireForm() 
+    return render(request, 'pages\Partenaire.html', {'form': form})
 
 def Energy(request):
     contrat = Contrat.objects.get(contrat_id = contratid)
@@ -55,7 +72,8 @@ def Energy(request):
         form = EnergieForm()
     return render(request, 'pages\Efficacite_energitique.html' , {'form': form})
 
-def Commercial(request):
+def Commercial(request , contratid):
+    contrat = Contrat.objects.get(contrat_id = contratid)
     if request.method=="POST":
         form = CommercialeForm(request.POST)
         if form.is_valid():

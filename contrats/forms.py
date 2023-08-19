@@ -1,5 +1,5 @@
 from django import forms
-from .models import Contrat, Perimetre , Energie , Commerciale , Commercialseconde
+from .models import Contrat, Perimetre , Energie , Commerciale , Commercialseconde , Investissement , Partenaire
 
 class ContratForm(forms.ModelForm):
     class Meta:
@@ -25,3 +25,15 @@ class CommercialsecondeForm(forms.ModelForm):
     class Meta:
         model = Commercialseconde
         fields ="__all__"
+
+class InvestissementForm(forms.ModelForm):
+    
+    class Meta:
+        model = Investissement
+        fields ="__all__"
+
+class PartenaireForm(forms.ModelForm):
+    class Meta:
+        model = Partenaire
+        fields ="__all__"
+        

@@ -57,4 +57,23 @@ class Energie(models.Model):
     consommation_carurbant = models.DecimalField(max_digits=5 , decimal_places=2)
     consommation_electricite = models.DecimalField(max_digits=5 , decimal_places=2)
     emission_carbone = models.DecimalField(max_digits=5 , decimal_places=2)
+
+class Partenaire(models.Model):
+    partenaire_id = models.AutoField(primary_key=True )
+    partenaire_nom = models.CharField(max_length=100)
+    def __str__(self) :
+        return self.partenaire_nom
+
+class Investissement(models.Model):
+    contrat_id = models.ForeignKey(Contrat , on_delete=models.CASCADE , blank=True, null=True )
+    partenaire_id = models.ForeignKey(Partenaire , on_delete=models.CASCADE )
+    montant_investissement = models.DecimalField(max_digits=10, decimal_places=2)
+    nombre_bus = models.IntegerField()
+    nombre_abris = models.IntegerField()
+    nombre_arrets = models.IntegerField()
+    nombre_aires_stationnement = models.IntegerField()
+     
+    
+
+
     
