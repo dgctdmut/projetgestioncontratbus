@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'projetgestioncontratbus.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'test_dj',
+        'NAME': 'test3',
         'USER': 'postgres',
-        'PASSWORD': '12369',
+        'PASSWORD': 'Ilias204',
         'HOST': 'localhost',
         'PORT': '5432',
     }

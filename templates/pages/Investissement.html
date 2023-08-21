@@ -13,6 +13,8 @@
     <div class="content">
         <h6 style=" color : rgb(109, 105, 105)"><span>Gestion des contrats ></span> Ajouter un contrat</h6>
         <div class="white-square">
+          <form method="POST">
+            {% csrf_token %}
           <div id="Id_contrat" class="container-fluid mb-2" style="padding-left: 30px;">
             <h5 style=" color : gray">Investissement contractuels</h5>
           </div>
@@ -32,118 +34,158 @@
     <div class="row">
          <div class="col-md-6" style="padding-left:70px;  padding-right:60px;">
         <div class="frame">
+
+          <div class="row">
+            <div class="fieldWrapper">
+              <div class="col-md-12 mb-2">
+              <label for="{{ form.partenaire_id.id_for_label }}">Partenaire*</label>
+              </div>
+              <div class="col-md-12 mb-2 form-group">
+                <div class="input-group mb-2" style="height: 30px; width: 80%;">
+                    <div class="input-group-text" style="height: 35px; width: 10%;">C</div>
+                    {{ form.partenaire_id }}
+                    
+            </div>
+          </div>  
+          </div>
+      </div>
             
                 <div class="row">
-                <div class="col-md-12 mb-2" >Investissement*</div>
-                <div class="col-md-12 mb-2" class="form-group">
+                  <div class="col-md-12 mb-2">
+                    <label for="montant_investissement">Montant investissement*</label>
+                </div>
+                <div class="col-md-12 mb-2 form-group">
                     <div class="input-group mb-2" style="height: 30px; width: 80%;">
-                      <div class="input-group-text" style="height: 35px; width: 10%;">C</div>
-                      <input type="text" style="height: 35px ;" class="form-control" placeholder="Montant en DH">
+                        <div class="input-group-text" style="height: 35px; width: 10%;">C</div>
+                        <input type="text" style="height: 35px;" class="form-control" id="montant_investissement" name="montant_investissement" placeholder="Montant en DH" required>
                     </div>
-                  </div>  
                 </div>
         <div class="row">
-            <div class="col-md-12 mb-2" >Nombre de bus*</div>
-            <div class="col-md-12 mb-2" class="form-group">
-                <div class="input-group mb-2" style="height: 30px; width: 80%;">
+            <div class="col-md-12 mb-2">
+              <label for="nombre_bus">Nombre de bus*</label>
+          </div>
+          <div class="col-md-12 mb-2 form-group">
+              <div class="input-group mb-2" style="height: 30px; width: 80%;">
                   <div class="input-group-text" style="height: 35px; width: 10%;">C</div>
-                  <input type="text" style="height: 35px ;" class="form-control">
-                </div>
-              </div> 
+                  <input type="text" style="height: 35px;" class="form-control" id="nombre_bus" name="nombre_bus" required>
+              </div>
+          </div>
     </div>
     <div class="row">
-        <div class="col-md-12 mb-2" >Nombre d'Abris*</div>
-        <div class="col-md-12 mb-2" class="form-group">
-            <div class="input-group mb-2" style="height: 30px; width: 80%;">
-              <div class="input-group-text" style="height: 35px; width: 10%;">C</div>
-              <input type="text" style="height: 35px ;" class="form-control">
-            </div>
-          </div>
+      <div class="col-md-12 mb-2">
+        <label for="nombre_abris">Nombre d'Abris*</label>
+    </div>
+    <div class="col-md-12 mb-2 form-group">
+        <div class="input-group mb-2" style="height: 30px; width: 80%;">
+            <div class="input-group-text" style="height: 35px; width: 10%;">C</div>
+            <input type="text" style="height: 35px;" class="form-control" id="nombre_abris" name="nombre_abris" required>
+        </div>
+    </div>
 </div>
 <div class="row">
-    <div class="col-md-12 mb-2" >Nombre d'Arrêts*</div>
-    <div class="col-md-12 mb-2" class="form-group">
-        <div class="input-group mb-2" style="height: 30px; width: 80%;">
-          <div class="input-group-text" style="height: 35px; width: 10%;">C</div>
-          <input type="text" style="height: 35px ;" class="form-control">
-        </div>
-      </div>
+  <div class="col-md-12 mb-2">
+    <label for="nombre_arrets">Nombre d'Arrêts*</label>
+</div>
+<div class="col-md-12 mb-2 form-group">
+    <div class="input-group mb-2" style="height: 30px; width: 80%;">
+        <div class="input-group-text" style="height: 35px; width: 10%;">C</div>
+        <input type="text" style="height: 35px;" class="form-control" id="nombre_arrets" name="nombre_arrets" required>
+    </div>
+</div>
+</div>
 </div>
 
 <div class="row">
-    <div class="col-md-12 mb-2" >Nombre d'Aires de stationnement*</div>
-    <div class="col-md-12 mb-2" class="form-group">
-        <div class="input-group mb-2" style="height: 30px; width: 80%;">
+    <div class="col-md-12 mb-2">
+      <label for="nombre_aires_stationnement">Nombre d'Aires de stationnement*</label>
+  </div>
+  <div class="col-md-12 mb-2 form-group">
+      <div class="input-group mb-2" style="height: 30px; width: 80%;">
           <div class="input-group-text" style="height: 35px; width: 10%;">C</div>
-          <input type="text" style="height: 35px ;" class="form-control">
-        </div>
+          <input type="text" style="height: 35px;" class="form-control" id="nombre_aires_stationnement" name="nombre_aires_stationnement" required>
       </div>
+  </div>
 </div>
       </div>
         </div>
          
      
         <div class="col-md-6" style="padding-left:70px;  padding-right:60px;">
-            <div class="frame">
-                
-                    <div class="row">
-                    <div class="col-md-12 mb-2" >Investissement*</div>
-                    <div class="col-md-12 mb-2" class="form-group">
-                        <div class="input-group mb-2" style="height: 30px; width: 80%;">
+          <div class="frame">
+              
+                  <div class="row">
+                    <div class="col-md-12 mb-2">
+                      <label for="montant_investissement">Montant investissement*</label>
+                  </div>
+                  <div class="col-md-12 mb-2 form-group">
+                      <div class="input-group mb-2" style="height: 30px; width: 80%;">
                           <div class="input-group-text" style="height: 35px; width: 10%;">C</div>
-                          <input type="text" style="height: 35px ;" class="form-control" placeholder="Montant en DH">
-                        </div>
-                      </div>  
-                    </div>
-            <div class="row">
-                <div class="col-md-12 mb-2" >Nombre de bus*</div>
-                <div class="col-md-12 mb-2" class="form-group">
-                    <div class="input-group mb-2" style="height: 30px; width: 80%;">
-                      <div class="input-group-text" style="height: 35px; width: 10%;">C</div>
-                      <input type="text" style="height: 35px ;" class="form-control">
-                    </div>
-                  </div> 
-        </div>
-        <div class="row">
-            <div class="col-md-12 mb-2" >Nombre d'Abris*</div>
-            <div class="col-md-12 mb-2" class="form-group">
-                <div class="input-group mb-2" style="height: 30px; width: 80%;">
-                  <div class="input-group-text" style="height: 35px; width: 10%;">C</div>
-                  <input type="text" style="height: 35px ;" class="form-control">
-                </div>
-              </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12 mb-2" >Nombre d'Arrêts*</div>
-        <div class="col-md-12 mb-2" class="form-group">
-            <div class="input-group mb-2" style="height: 30px; width: 80%;">
-              <div class="input-group-text" style="height: 35px; width: 10%;">C</div>
-              <input type="text" style="height: 35px ;" class="form-control">
+                          <input type="text" style="height: 35px;" class="form-control" id="montant_investissement" name="montant_investissement" placeholder="Montant en DH" required>
+                      </div>
+                  </div>
+          <div class="row">
+              <div class="col-md-12 mb-2">
+                <label for="nombre_bus">Nombre de bus*</label>
             </div>
+            <div class="col-md-12 mb-2 form-group">
+                <div class="input-group mb-2" style="height: 30px; width: 80%;">
+                    <div class="input-group-text" style="height: 35px; width: 10%;">C</div>
+                    <input type="text" style="height: 35px;" class="form-control" id="nombre_bus" name="nombre_bus" required>
+                </div>
+            </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 mb-2">
+          <label for="nombre_abris">Nombre d'Abris*</label>
+      </div>
+      <div class="col-md-12 mb-2 form-group">
+          <div class="input-group mb-2" style="height: 30px; width: 80%;">
+              <div class="input-group-text" style="height: 35px; width: 10%;">C</div>
+              <input type="text" style="height: 35px;" class="form-control" id="nombre_abris" name="nombre_abris" required>
           </div>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 mb-2">
+      <label for="nombre_arrets">Nombre d'Arrêts*</label>
+  </div>
+  <div class="col-md-12 mb-2 form-group">
+      <div class="input-group mb-2" style="height: 30px; width: 80%;">
+          <div class="input-group-text" style="height: 35px; width: 10%;">C</div>
+          <input type="text" style="height: 35px;" class="form-control" id="nombre_arrets" name="nombre_arrets" required>
+      </div>
+  </div>
+  </div>
+  
+  <div class="row">
+      <div class="col-md-12 mb-2">
+        <label for="nombre_aires_stationnement">Nombre d'Aires de stationnement*</label>
     </div>
+    <div class="col-md-12 mb-2 form-group">
+        <div class="input-group mb-2" style="height: 30px; width: 80%;">
+            <div class="input-group-text" style="height: 35px; width: 10%;">C</div>
+            <input type="text" style="height: 35px;" class="form-control" id="nombre_aires_stationnement" name="nombre_aires_stationnement" required>
+        </div>
+    </div>
+  </div>
+        </div>
+          </div>
+    <br><br>
+  
+
+
+
     
     <div class="row">
-        <div class="col-md-12 mb-2" >Nombre d'Aires de stationnement*</div>
-        <div class="col-md-12 mb-2" class="form-group">
-            <div class="input-group mb-2" style="height: 30px; width: 80%;">
-              <div class="input-group-text" style="height: 35px; width: 10%;">C</div>
-              <input type="text" style="height: 35px ;" class="form-control">
-            </div>
-          </div>
-    </div>
-          </div>
-            </div>
-    </div>
-    <br>
-    <div class="row">
-    <div class="col-md-10"></div>
-    <div class="col-md-2">
+    <div class="col-md-8"></div>
+    <div class="col-md-4">
       <h6 style=" color : rgb(0, 0, 0) ; font-size: 14px; font-weight: bold ; ">Autre partenaire<a href="{% url 'Partenaire' %}">
       <button class="btn btn-primary" style="width: 25px; height: 25px; border-radius: 50%; position: relative;">
       <div style="font-size: 25px;top: 40%; position: absolute;  transform: translate(-50%, -50%);">+</div>
     </button></a></h6>
   </div>
+</div>
+</div>
 </div>
     <br>
     <div class="row">
@@ -155,17 +197,18 @@
     
         <a href="{% url 'contrat' %}"><button class="btn btn-primary" ></button></a>
         <a href=""><button class="btn btn-primary"></button></a>
-        <a href="{% url 'Investissement' %}"><button class="btn btn-primary" id="btttn"></button></a>
+        <a href=""><button class="btn btn-primary" id="btttn"></button></a>
         <a href="{% url 'Patrimoine' %}" ><button class="btn btn-primary" ></button></a>
         <a href="{% url 'Effectif' %}"><button class="btn btn-primary"></button></a>
         <a href="{% url 'Service' %}"><button class="btn btn-primary"></button></a>
-        <a href="{% url 'Commercial' %}"><button class="btn btn-primary"></button></a>
+        <a href=""><button class="btn btn-primary"></button></a>
         <a href="{% url 'Energy' %}"><button class="btn btn-primary"></button></a>
       </div>
       </div> 
-      <div class="col-md-1"><button type="button" class="btn btn-primary" id="suivant"><a class="page-link" href="{% url 'Patrimoine' %}">Suivant</a></button></div>
+      <div class="col-md-1"><button type="submit" class="btn btn-primary" id="suivant">Suivant</button></div>
     </div>
 
+  </form>
         </div>
     </div>
   

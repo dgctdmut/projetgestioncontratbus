@@ -1,131 +1,152 @@
 {% extends 'base.html' %}
 {% load static %}
-<link rel="stylesheet" href=" {% static 'bootstrap-5.2.3-dist/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'bootstrap-5.2.3-dist/css/bootstrap.min.css' %}">
 <title style="zoom: 0.8;">Direction de la Mobilité Urbaine et Transport</title>
-<link rel="stylesheet" href=" {% static 'css/pg.css' %}">
+<link rel="stylesheet" href="{% static 'css/pg.css' %}">
 <script src="{% static 'bootstrap-5.2.3-dist/js/bootstrap.min.js'%}"></script>
 {% block content %}
 
-
 <div class="content">
-    <h6 style=" color : rgb(109, 105, 105)"><span>Gestion des contrats></span> Ajouter un contrat</h6>
+    <h6 style="color: rgb(109, 105, 105)"><span>Gestion des contrats</span> Ajouter un contrat</h6>
     <div class="white-square">
-      <div id="Id_contrat" class="container-fluid mb-5" style="padding-left: 60px;">
-        <h5 style=" color : gray">Aspect commercial </h5>
-      </div>
-      <div class="container">
-        <div class="row mb-4">
-          <div class="col-sm-6 mb-3 mb-sm-0">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title text-center mb-4">Parcours</h5>
-                
-                <div class="row">
-                <div class="col-md-6 mb-3" class="form-group">
-              <label>Total semestriel parcouru *</label>
-              <input id="ma_bordure" type="text" placeholder="Km"class="form-control">
-            </div>
-            <div class="col-md-6 mb-3" class="form-group">
-              <label>Moyenne par ligne *</label>
-              <input id="ma_bordure" type="text" placeholder="Km"class="form-control">
-            </div>
-            <div class="col-md-6 mb-3" class="form-group">
-              <label>Trajet le plus long *</label>
-              <input id="ma_bordure" type="text" placeholder="Km"class="form-control">
-            </div>
-            <div class="col-md-6 mb-3" class="form-group">
-              <label>Trajet le plus court *</label>
-              <input id="ma_bordure" type="text" placeholder="Km"class="form-control">
-            </div>
-            <div class="col-md-6 mb-3" class="form-group">
-              <label>Temps max trajet *</label>
-              <input id="ma_bordure" type="text" placeholder="min"class="form-control">
-            </div>
-            <div class="col-md-6 mb-3" class="form-group">
-              <label>Temps min trajet *</label>
-              <input id="ma_bordure" type="text" placeholder="min"class="form-control">
-            </div>
+        <form method="POST">
+            {% csrf_token %}
       
-            <div class="col-md-6 mb-3" class="form-group">
-              <label>Fréquence moyenne de passage *</label>
-              <input id="ma_bordure" type="text" placeholder="Unité/heure"class="form-control">
-            </div>
-            <div class="col-md-6 mb-3" class="form-group">
-              <label>Vitesse commerciale moyenne *</label>
-              <input id="ma_bordure" type="text" placeholder="Km/heure"class="form-control">
-            </div>
-            <div class="col-md-12 mb-3" class="form-group">
-              <label>Ponctualité *</label>
-              <input id="ma_bordure" type="text" placeholder="min"class="form-control">
-            </div>
-              </div>
-            </div>
-          </div>
+        <div id="id_contrat" class="container-fluid mb-5" style="padding-left: 60px;">
+            <h5 style="color: gray">Aspect commercial</h5>
         </div>
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title text-center mb-4">Encombrement de la voie</h5>
-                <div class="mb-3" class="form-group">
-                  <label>Horaires du service*</label>
-                  <div class="input-group mb-2" >
-                    <div class="input-group-text">De</div>
-                    <input type="time"class="form-control" placeholder="H">
-                  </div>
-          
-                  <div class="input-group mb-2">
-                    <div class="input-group-text">A</div>
-                    <input type="time" class="form-control" placeholder="H">
-                  </div>
-                </div>
-          
-                <div class="mb-3" class="form-group">
-                  <label>Heure d'arrêt du service *</label>
-                  <input id="ma_bordure" type="text"
-                  placeholder="Temps"class="form-control">
-                </div>
-                <div class="mb-3" class="form-group">
-                  <label>Pannes des bus sur la voie publique  *</label>
-                  <input id="ma_bordure" type="number" placeholder=""class="form-control">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title text-center mb-4">Parcours</h5>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <div class="form-group">
+                                        <label for="total_parcours_semestriel">Total semestriel parcouru *</label>
+                                        <input id="total_parcours_semestriel" type="text" name="total_parcours_semestriel" style="border: 2px solid rgb(227, 143, 143);" placeholder="Km" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="form-group">
+                                        <label for="moyenne_par_ligne">Moyenne par ligne *</label>
+                                        <input id="moyenne_par_ligne" type="text" name="moyenne_par_ligne" style="border: 2px solid rgb(227, 143, 143);" placeholder="Km" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="form-group">
+                                        <label for="trajet_le_plus_long">Trajet le plus long *</label>
+                                        <input id="trajet_le_plus_long" type="text" name="trajet_le_plus_long" style="border: 2px solid rgb(227, 143, 143);" placeholder="Km" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="form-group">
+                                        <label for="trajet_le_plus_court">Trajet le plus court *</label>
+                                        <input id="trajet_le_plus_court" type="text" name="trajet_le_plus_court" style="border: 2px solid rgb(227, 143, 143);" placeholder="Km" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="form-group">
+                                        <label for="temps_max_trajet">Temps max trajet *</label>
+                                        <input id="temps_max_trajet" type="text" name="temps_max_trajet" style="border: 2px solid rgb(227, 143, 143);" placeholder="min" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="form-group">
+                                        <label for="temps_min_trajet">Temps min trajet *</label>
+                                        <input id="temps_min_trajet" type="text" name="temps_min_trajet" style="border: 2px solid rgb(227, 143, 143);" placeholder="min" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="form-group">
+                                        <label for="frequence_passage">Fréquence moyenne de passage *</label>
+                                        <input id="frequence_passage" type="text" name="frequence_passage" style="border: 2px solid rgb(227, 143, 143);" placeholder="Unité/heure" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="form-group">
+                                        <label for="vitesse_commerciale">Vitesse commerciale moyenne *</label>
+                                        <input id="vitesse_commerciale" type="text" name="vitesse_commerciale" style="border: 2px solid rgb(227, 143, 143);" placeholder="Km/heure" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <div class="form-group">
+                                        <label for="ponctualite">Ponctualité *</label>
+                                        <input id="ponctualite" type="text" name="ponctualite" style="border: 2px solid rgb(227, 143, 143);" placeholder="min" class="form-control" required>
+                                    </div>
+                                </div>
                             </div>
-                <div class="mb-3" class="form-group">
-                  <label>Accidents de circulation des bus *</label>
-                  <input id="ma_bordure" type="number"placeholder=""class="form-control">
+                        </div>
+                    
                 </div>
-                <div class="mb-3" class="form-group">
-                  <label>Délai moyes d’évacuation des véhicules en panne *</label>
-                  <input id="ma_bordure" type="text" placeholder="min"class="form-control">
-                </div>
-              </div>
             </div>
-          </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center mb-4">Encombrement de la voie</h5>
+                        <div class="mb-3 form-group">
+                            <label for="horaire_debut">Horaires du service*</label>
+                            <div class="input-group mb-2">
+                                <div class="input-group-text">De</div>
+                                <input id="horaire_debut" type="time" name="horaire_debut" class="form-control" placeholder="H" required>
+                            </div>
+                            <label for="horaire_fin"></label>
+                            <div class="input-group mb-2">
+                                <div class="input-group-text">A</div>
+                                <input id="horaire_fin" type="time" name="horaire_fin" class="form-control" placeholder="H" required>
+                            </div>
+                        </div>
+                        <div class="mb-3 form-group">
+                            <label for="heure_arret_service">Heure d'arrêt du service *</label>
+                            <input id="heure_arret_service" type="text" name="heure_arret_service" style="border: 2px solid rgb(227, 143, 143);" placeholder="Temps" class="form-control" required>
+                        </div>
+                        <div class="mb-3 form-group">
+                            <label for="pannes_bus">Pannes des bus sur la voie publique *</label>
+                            <input id="pannes_bus" type="number" name="pannes_bus" style="border: 2px solid rgb(227, 143, 143);" placeholder="" class="form-control" required>
+                        </div>
+                        <div class="mb-3 form-group">
+                            <label for="accidents_bus">Accidents de circulation des bus *</label>
+                            <input id="accidents_bus" type="number" name="accidents_bus" style="border: 2px solid rgb(227, 143, 143);" placeholder="" class="form-control" required>
+                        </div>
+                        <div class="mb-3 form-group">
+                            <label for="delai_evacuation_panne">Délai moyen d’évacuation des véhicules en panne *</label>
+                            <input id="delai_evacuation_panne" type="text" name="delai_evacuation_panne" style="border: 2px solid rgb(227, 143, 143);" placeholder="min" class="form-control" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+       
 
         <div class="row">
+            <div class="col-md-2" style="padding-left: 85px;">
+                <button type="button" class="btn btn-primary" id="suivant">
+                    <a class="page-link" href="">Précédent</a>
+                </button>
+            </div>
+            <div class="col-md-8">
+                <div class="pagination">
+                    <a href="{% url 'contrat' %}"><button class="btn btn-primary"></button></a>
+                    <a href=""><button class="btn btn-primary"></button></a>
+                    <a href=""><button class="btn btn-primary"></button></a>
+                    <a href="{% url 'Patrimoine' %}"><button class="btn btn-primary"></button></a>
+                    <a href="{% url 'Effectif' %}"><button class="btn btn-primary"></button></a>
+                    <a href="{% url 'Service' %}"><button class="btn btn-primary"></button></a>
+                    <a href="{% url 'Commercial_second' %}"><button class="btn btn-primary" id="btttn"></button></a>
+                    <a href="{% url 'Energy' %}"><button class="btn btn-primary"></button></a>
+                </div>
+            </div>
+            <div class="col-md-1">q
+                <button type="submit" class="btn btn-primary" id="suivant">
+                    Suivant
+                </button>
+            </div>
+        </div>
     
-          <div class="col-md-2" style="padding-left: 85px;"><button type="button" class="btn btn-primary" id="suivant"><a class="page-link" href="{% url 'Commercial' %}">Précédent</a></button></div>
-
-       <div class="col-md-8">
-  
-              <div class="pagination">
-    
-                  <a href="{% url 'contrat' %}" ><button class="btn btn-primary" ></button></a>
-                  <a href="" ><button class="btn btn-primary"></button></a>
-                  <a href="{% url 'Investissement' %}" ><button class="btn btn-primary"></button></a>
-                  <a href="{% url 'Patrimoine' %}" ><button class="btn btn-primary"></button></a>
-                  <a href="{% url 'Effectif' %}" ><button class="btn btn-primary"></button></a>
-                  <a href="{% url 'Service' %}" ><button class="btn btn-primary"></button></a>
-                  <a href="{% url 'Commercial_second' %}" ><button class="btn btn-primary" id="btttn"></button></a>
-                  <a href="{% url 'Energy' %}" ><button class="btn btn-primary"></button></a>
-              </div> 
-       </div> 
-          <div class="col-md-1"><button type="button" class="btn btn-primary" id="suivant"><a class="page-link" href="{% url 'Energy' %}">Suivant</a></button></div>
+       </form>
     </div>
-        
-  </div> 
-   
-  </div>
-    
-    </body></html>
-  
-    {% endblock content %}
+</div>
+
+{% endblock content %}

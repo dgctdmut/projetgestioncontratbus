@@ -7,10 +7,10 @@ urlpatterns = [
     path('Patrimoine_second',views.Patrimoine_second,name='Patrimoine_second'),
     path('Effectif',views.Effectif,name='Effectif'),
     path('Service',views.Service,name='Service'),    
-    path('Investissement',views.Investissement,name='Investissement'),    
-    path('Partenaire',views.Partenaire,name='Partenaire'),
+    path('Investissement/<int:contratid>/',views.Investissement_contractuels,name='Investissement'),    
+    path('Partenaire',views.Autre_Partenaire,name='Partenaire'),
     path('Energy',views.Energy,name='Energy'),
-    path('Commercial',views.Commercial,name='Commercial'),
+    path('Commercial/<int:contratid>/',views.Commercial,name='Commercial'),
     path('Commercial_second',views.Commercial_second,name='Commercial_second'),
     path('Contratslist',views.Contratslist,name='contrat_list'),
 
