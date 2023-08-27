@@ -1,6 +1,7 @@
 from django.shortcuts import render , redirect 
 from .models import Contrat , Perimetre , Energie , Partenaire , Investissement
-from .forms import ContratForm , PerimetreForm , EnergieForm , CommercialeForm , CommercialsecondeForm , InvestissementForm , PartenaireForm
+from .forms import ContratForm , PerimetreForm , EnergieForm ,  CommercialeForm , CommercialsecondeForm , InvestissementForm , PartenaireForm 
+
 
 def Contratidentif(request):
     if request.method=="POST":
@@ -99,3 +100,7 @@ def Commercial_second(request):
 def Contratslist(request):
     return render(request, 'pages\Contratslist.html')
 
+
+
+def login_view(request):
+    return render(request, 'pages\login.html')
