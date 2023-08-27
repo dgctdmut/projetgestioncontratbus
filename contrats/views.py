@@ -99,3 +99,6 @@ def Commercial_second(request):
 def Contratslist(request):
     return render(request, 'pages\Contratslist.html')
 
+def Accueil(request):
+    return render(request, 'pages\Accueil.html')
+
