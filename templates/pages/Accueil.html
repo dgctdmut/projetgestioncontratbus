@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" href=" {% static 'bootstrap-5.2.3-dist/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href=" {% static 'css/page.css' %}">
+<script src="{% static 'bootstrap-5.2.3-dist/js/bootstrap.min.js'%}"></script>
+{% block content %}
+
+<html>
+<head>
+
+</head>
+<body>
+  
+
+    <div class="content">
+        <h6 class=" mb-4" style=" color : rgb(109, 105, 105)"><span>Accueil</span> </h6>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+    
+                <div class="whiteframe">
+                    <div class="container-fluid mb-3" style="color :  rgb(158, 153, 153) ; font-size:110% ; padding-top:10px">
+                        Total Contrat
+                        </div>
+                        <div class="container-fluid mb-3" style="font-size:170% ; font-family: monospace; font-weight: bold; padding-bottom:10px">
+                        <div class="row">
+                        <div class="col-md-8">
+                        123
+                        </div> 
+                        <div class="col-md-4" >
+                        <img src="{% static 'image/Template3.png'%}" alt="image" style=" width: 100px; height: 50px; padding-bottom:10px">
+                        </div> 
+                    </div> 
+                    </div>    
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+    
+                <div class="whiteframe">
+                    <div class="container-fluid mb-3" style="color :  rgb(158, 153, 153) ; font-size:110% ; padding-top:10px">
+                        Total d'Investissement
+                        </div>
+                        <div class="container-fluid mb-3" style="font-size:170% ; font-family: monospace; font-weight: bold; padding-bottom:10px">
+                        <div class="row">
+                        <div class="col-md-8">
+                        456
+                        </div> 
+                        <div class="col-md-4" >
+                        <img src="{% static 'image/Template1.png'%}" alt="image" style=" width: 100px; height: 50px; padding-bottom:10px">
+                        </div> 
+                    </div> 
+                    </div>    
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+    
+                <div class="whiteframe">
+                    <div class="container-fluid mb-3" style="color :  rgb(158, 153, 153) ; font-size:110% ; padding-top:10px">
+                        Total Bus
+                        </div>
+                        <div class="container-fluid mb-3" style="font-size:170% ; font-family: monospace; font-weight: bold; padding-bottom:10px">
+                        <div class="row">
+                        <div class="col-md-8">
+                        789O
+                        </div> 
+                        <div class="col-md-4" >
+                        <img src="{% static 'image/Template2.png'%}" alt="image" style=" width: 100px; height: 50px; padding-bottom:10px">
+                        </div> 
+                    </div> 
+                    </div>    
+                </div>
+            </div>    
+                        
+            
+        
+        
+        
+        <div class="col-md-7">
+            
+            <div class="whiteframe">    
+                <div class="container-fluid mb-3" style="color :  rgb(158, 153, 153) ; font-size:110% ; padding-top:10px">
+                    Investissement
+                    </div>
+                <img src="{% static 'image/téléchargement.png'%}" alt="image" style=" width: 770px; height: 360px;">
+            </div>
+        </div>
+        <div class="col-md-5">
+    
+            <div class="whiteframe">  
+                <div class="container-fluid mb-3" style="color :  rgb(158, 153, 153) ; font-size:110% ; padding-top:10px">
+                    Localisation
+                    </div>  
+                    <div class="container">
+                <table class="table">
+                    <thead>
+                      <tr class="table-secondary">
+                        <th scope="col">Ville</th>
+                        <th scope="col">Indicateur</th>
+                        <th scope="col">Bus</th>
+                        <th scope="col">Investissement</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td >Casablanca</td>
+                        <td>3746</td>
+                        <td>252</td>
+                        <td>19,291 MMAD</td>
+                      </tr>
+                      <tr>
+                        <td>Marrakech</td>
+                        <td>8126</td>
+                        <td>128</td>
+                        <td>17,638 MMAD</td>
+                      </tr>
+                      <tr>
+                        <td>Rabat</td>
+                        <td>8836</td>
+                        <td>194</td>
+                        <td>16,218 MMAD</td>
+                      </tr>
+                      <tr>
+                        <td>Agadir</td>
+                        <td>8836</td>
+                        <td>094</td>
+                        <td>16,218 MMAD</td>
+                      </tr>
+                      <tr>
+                        <td>Tanger</td>
+                        <td>8836</td>
+                        <td>114</td>
+                        <td>16,218 MMAD</td>
+                      </tr>
+                      <tr>
+                        <td>Fes</td>
+                        <td>8836</td>
+                        <td>100</td>
+                        <td>16,218 MMAD</td>
+                      </tr>
+                      <tr>
+                        <td>Tétouan</td>
+                        <td>8836</td>
+                        <td>050</td>
+                        <td>16,218 MMAD</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+        </div>
+        </div>
+</div>
+</div>
+  
+</body>
+</html>
+
+
+
+{% endblock content %}

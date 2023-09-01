@@ -100,7 +100,10 @@ def Commercial_second(request):
 def Contratslist(request):
     return render(request, 'pages\Contratslist.html')
 
-
-
 def login_view(request):
     return render(request, 'pages\login.html')
+
+def Accueil(request):
+    return render(request, 'pages\Accueil.html')
+
+
