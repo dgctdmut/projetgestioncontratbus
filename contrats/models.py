@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 class Contrat(models.Model):
     contrat_id = models.AutoField(primary_key=True)
@@ -72,7 +73,37 @@ class Investissement(models.Model):
     nombre_abris = models.IntegerField()
     nombre_arrets = models.IntegerField()
     nombre_aires_stationnement = models.IntegerField()
-     
+    
+class Type_MR (models.Model): 
+    id_categoie = models.AutoField(primary_key=True) 
+    nom_categoie = models.CharField(max_length=100)
+
+class Type_MF (models.Model):
+    id_patrimoine = models.AutoField(primary_key=True) 
+    contrat_id = models.CharField(max_length=100)
+
+class Patrimoine (models.Model):
+    id_patrimoine = models.AutoField(primary_key=True)
+    contrat_id = models.ForeignKey(Contrat, on_delete=models.CASCADE, blank=True,null=True) 
+    id_Fixe = models.ForeignKey(Type_MF, on_delete=models.CASCADE, blank=True, null=True) 
+    id_MR = models.ForeignKey(Type_MR, on_delete=models.CASCADE, blank=True, null=True) 
+
+class Materiel_roulant (models.Model):
+    nombre = models.DecimalField(max_digits=5 , decimal_places=2)
+    age = models.DecimalField(max_digits=5 , decimal_places=2)
+    km_parcourus = models.DecimalField(max_digits=5, decimal_places=2)
+    id_MR = models.ForeignKey(Type_MR, on_delete=models.CASCADE, blank=True, null=True)
+
+class Materiel_roulant (models.Model):
+    nombre = models.DecimalField(max_digits=5, decimal_places=2)
+    age = models.DecimalField(max_digits=5, decimal_places=2)
+    capacite = models.CharField()
+    etet_satisfaction = models.CharField()
+    id_Fixe = models.ForeignKey(Type_MF, on_delete=models.CASCADE, blank=True, null=True) 
+
+class Effectif_Rh (models.Model):
+    contrat_id = models.ForeignKey(Contrat, on_delete=models.CASCADE, blank=True, null=True) 
+    Conducteurs = models.IntegerField()
     
 
 

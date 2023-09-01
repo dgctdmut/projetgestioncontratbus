@@ -1,0 +1,51 @@
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'bootstrap-5.2.3-dist/css/bootstrap.min.css' %}">
+<title style="zoom: 0.8;">Direction de la Mobilité Urbaine et Transport</title>
+<script src="{% static 'bootstrap-5.2.3-dist/js/bootstrap.min.js'%}"></script>
+{% block content %}
+<html>
+<head>
+
+</head>
+<body style="background-color: #dfd9d986;">
+    
+<section>
+    <div class="container mt-2 pt-3">
+        <div class="row">
+            <div class="col-12 col-sm-8 col-md-6 m-auto">
+                <div class="card-body">
+                    <div class="pb-3 container d-flex justify-content-center align-items-center" >
+                        <img src="{% static 'image/ImageMI.png'%}" alt="image" id="image" class="img-fluid">
+                    </div>
+                    <div class="p-2"style="border-left: 4px solid #000000;">
+                        <h4>BIENVENUE</h4>
+                    </div>
+                    
+                    <form method="POST">
+                        {% csrf_token %}        
+                          <div class="mb-3">
+                            <label for="exampleInputEmail1" class="pt-3 form-label mt-2">EMAIL</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"placeholder="Entrer votre email">
+                            <div id="emailHelp" class="form-text">email@mail.com</div>
+                          </div>
+                          <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">MOT DE PASSE</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Entrer votre mot de passe">
+                            <div id="emailHelp" class="form-text">Your password must be 8-20 characters long. contain Letters and numbers,and must not contain spaces.</div>
+                          </div>
+                          
+                      <button type="submit" class="col-12 btn btn-primary">CONNECTER</button>
+                      <a href="" class="nav">Mot de passe oublié ?</a>
+                  </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+</body>
+</html>
+{% endblock content %}
